@@ -2,8 +2,8 @@
 Makeit
 ======
 
-Makeit is a build environment targeted at developers using the C and C++
-programming languages.
+Makeit is a build environment primarily targeted at developers using the C
+and C++ programming languages.
 
 Makeit relies on the freely available and widely portable `GNU make`_
 program. GNU make provides a range of extensions to standard make
@@ -16,10 +16,10 @@ variations implicit in supporting different compilers and host operating
 systems are also hidden, meaning not only will your makefile be simple, but
 it will be portable.
 
-Version 8.0 of makeit has been more or less been rewritten from scratch and
-is now being made available under a BSD style license_. You may install
-makeit into a standard location and use it from there, or copy the package
-into a subdirectory of your own project and use it from there instead.
+Version 8.0 of makeit has more or less been rewritten from scratch and is
+now being made available under a BSD style license_. You may install makeit
+into a standard location and use it from there, or copy the package into a
+subdirectory of your own project and use it from there instead.
 
 Please note that in the process of rewriting makeit and arriving at version
 8.0, it was restructured substantially in comparison to the version

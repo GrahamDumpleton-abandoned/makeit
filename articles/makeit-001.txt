@@ -8,8 +8,8 @@ Basic Introduction To Makeit
 
 .. contents::
 
-Provides a slightly more in depth overview of some of the main features
-provided by Makeit.
+Provides a basic introduction to Makeit, the main features it provides
+and how to get started with it.
 
 Getting Started
 ===============

@@ -2,12 +2,12 @@
 Porting
 =======
 
+.. contents::
+
 This file contains information about the compiler configurations files and
 their contents. You will need to consult this file if you need to create a
 new type of compiler configuration, or simply wish to know more about what
 the files contain.
-
-.. contents::
 
 Configuration Files
 -------------------
