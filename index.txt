@@ -21,19 +21,20 @@ is now being made available under a BSD style license_. You may install
 makeit into a standard location and use it from there, or copy the package
 into a subdirectory of your own project and use it from there instead.
 
-Please note that in the process of rewriting makeit, it was restructured
-substantially in comparison to the version supplied with OSE version 7.0.
-As such, various questionable features have been dropped for the sake of
-simplicitly and the naming conventions employed changed. Do not expect your
-existing makefiles to work without some changes being required.
+Please note that in the process of rewriting makeit and arriving at version
+8.0, it was restructured substantially in comparison to the version
+supplied with OSE version 7.0. As such, various questionable features have
+been dropped for the sake of simplicitly and the naming conventions
+employed changed. Do not expect your existing makefiles to work without
+some changes being required.
 
 Any questions you may have should be directed to the "Help" web forum on
 the OSE_ web site. Make it clear in your posts which version of this
 package you are using.
 
-Official standalone releases of Makeit can be downloaded from:
-
-  http://www.dscpl.com.au/downloads.html
+.. Official standalone releases of Makeit can be downloaded from:
+..
+..   http://www.dscpl.com.au/downloads.html
 
 The source code for the latest working copy of Makeit can be viewed at:
 

@@ -1,0 +1,12 @@
+Makeit is in the process of being extracted out of OSE and made into a
+seperate package in its own right. The version of makeit in OSE 8.0 is
+effectively equivalent to what this web site documents.
+
+As this process of extraction is being done, the documentation is being
+updated. Because of the changes in Makeit version 8.0, this documentation
+will not always be relevant to older versions of Makeit.
+
+If you are using OSE 7.0, you should consult the older documentation for
+Makeit on the OSE_ web site.
+
+.. _OSE: http://ose.sourceforge.net
