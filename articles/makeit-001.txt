@@ -4,11 +4,11 @@ Basic Introduction To Makeit
 
 :Author: Graham Dumpleton
 :Contact: grahamd@dscpl.com.au
-:Updated: 27/03/2005
+:Updated: 28/03/2005
 
 .. contents::
 
-Provides a basic introduction to Makeit, the main features it provides
+Provides a basic introduction to makeit, the main features it provides
 and how to get started with it.
 
 Getting Started
@@ -535,7 +535,7 @@ subdirectory.
 
 ::
 
-  powerpc-apple-darwin-gcc3.3-dbg/app1 -v -cf config.cf
+  powerpc-apple-darwin-gcc3.3-dbg/app1
 
 The name of the subdirectory created to hold your object files, library and
 programs is actually dependent on the combination of the host identifier,
