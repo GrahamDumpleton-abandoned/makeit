@@ -23,7 +23,7 @@ _package = []
 if _links == []:
   _package.append(("Home","%(makeit_home)s/index.html"))
 
-#_package.append(("Articles","%(makeit_home)s/articles.html"))
+_package.append(("Articles","%(makeit_home)s/articles.html"))
 _package.append(("License","%(makeit_home)s/license.html"))
 #_package.append(("Examples","%(makeit_home)s/examples/index.html"))
 _package.append(("Installation","%(makeit_home)s/install.html"))
