@@ -27,10 +27,11 @@ if _links == []:
 _package.append(("License","%(makeit_home)s/license.html"))
 #_package.append(("Examples","%(makeit_home)s/examples/index.html"))
 _package.append(("Installation","%(makeit_home)s/install.html"))
+_package.append(("Porting","%(makeit_home)s/porting.html"))
 #_package.append(("Changes","%(makeit_home)s/changes.html"))
 #_package.append(("TODO","%(makeit_home)s/todo.html"))
 
-_links.append(("Vampire",_package))
+_links.append(("Makeit",_package))
 
 def links(req):
   return _links
