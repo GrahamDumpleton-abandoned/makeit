@@ -558,28 +558,28 @@ program, you can use any of the options supported by GNU make with the
 more comprehensive discussion of the command line options you should
 consult the documentation for GNU make.
 
-  -C DIR	Change to directory "DIR" before reading the makefiles.
-		If multiple "-C" options are specified, each is interpreted
-		relative to the previous one: "-C / -C etc" is equivalent
-		to "-C /etc".
+  -C DIR        Change to directory "DIR" before reading the makefiles.
+                If multiple "-C" options are specified, each is interpreted
+                relative to the previous one: "-C / -C etc" is equivalent
+                to "-C /etc".
 
-  -d		Print debugging information in addition to normal processing.
-		The debugging information says which files are being
-		considered for remaking, which file-times are being
-		compared with what results, which files actually need to be
-		remade, which implicit rules are considered and which are
-		applied - everything interesting about how GNU make decides
-		what to do.
+  -d            Print debugging information in addition to normal processing.
+                The debugging information says which files are being
+                considered for remaking, which file-times are being
+                compared with what results, which files actually need to be
+                remade, which implicit rules are considered and which are
+                applied - everything interesting about how GNU make decides
+                what to do.
 
-  -f FILE	Read the file named "FILE" as a makefile.
+  -f FILE       Read the file named "FILE" as a makefile.
 
-  -h		Remind you of the options that GNU make understands, and then
-		exit.
+  -h            Remind you of the options that GNU make understands, and then
+                exit.
 
-  -n		Print the commands that would be executed, but do not execute
-		them.
+  -n            Print the commands that would be executed, but do not execute
+                them.
 
-  -p		Print the data base (rules and variable values) that results
-		from reading the makefiles, then execute as usual, or as
-		otherwise specified.
+  -p            Print the data base (rules and variable values) that results
+                from reading the makefiles, then execute as usual, or as
+                otherwise specified.
 

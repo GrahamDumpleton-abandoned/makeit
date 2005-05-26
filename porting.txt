@@ -395,8 +395,8 @@ This can be remedied by the following being included in the "targets" file
 for that compiler::
 
   mostlyclean.always ::
-	  rm -rf $(MK)/SunWS_cache
-	  rm -rf $(MK).pic/SunWS_cache
+          rm -rf $(MK)/SunWS_cache
+          rm -rf $(MK).pic/SunWS_cache
 
 The Defaults Configuration File
 -------------------------------
