@@ -3,9 +3,7 @@ seperate package in its own right. In the process of doing this, the
 documentation is being updated and hosted here on this web site.
 
 The version of makeit which is distributed with the beta versions of OSE
-8.0 is effectively equivalent to what this web site documents. Until a
-separate package for makeit is released, you can either obtain it from the
-subversion repository, or use the version included with OSE 8.0.
+8.0 is effectively equivalent to what this web site documents.
 
 Because of the changes in Makeit version 8.0, this documentation will not
 always be relevant to older versions of Makeit. If you are using OSE 7.0,

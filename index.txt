@@ -32,9 +32,9 @@ Any questions you may have should be directed to the "Help" web forum on
 the OSE_ web site. Make it clear in your posts which version of this
 package you are using.
 
-.. Official standalone releases of Makeit can be downloaded from:
-..
-..   http://www.dscpl.com.au/downloads.html
+Official standalone releases of Makeit can be downloaded from:
+
+  http://www.dscpl.com.au/downloads.html
 
 The source code for the latest working copy of Makeit can be viewed at:
 
