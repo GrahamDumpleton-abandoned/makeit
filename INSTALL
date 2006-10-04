@@ -2,8 +2,6 @@
 Installation
 ============
 
-.. contents::
-
 This file contains a quick guide to what needs to be done to configure and
 install makeit.
 
@@ -276,9 +274,8 @@ New Configurations
 
 If there are no sample configurations appropriate for the compiler you wish
 to use, you will need to create one. Information about the contents of the
-various configuration files can be found in the porting_ instructions.
-
-.. _porting: porting.html
+various configuration files can be found with the porting instructions
+contained in the 'PORTING' file in this directory.
 
 Final Installation
 ------------------

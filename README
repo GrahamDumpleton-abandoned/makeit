@@ -5,21 +5,26 @@ Makeit
 Makeit is a build environment primarily targeted at developers using the C
 and C++ programming languages.
 
-Makeit relies on the freely available and widely portable `GNU make`_
-program. GNU make provides a range of extensions to standard make
-functionality far surpassing features available in commercial offerings.
-Makeit builds on this functionality to provide a library of predefined
-functionality which is included into your makefile and controlled through a
-limited number of variables. Your makefiles remain simple as all those
-rules you would otherwise have to write are out of sight. Further, all the
-variations implicit in supporting different compilers and host operating
-systems are also hidden, meaning not only will your makefile be simple, but
-it will be portable.
+Makeit relies on the freely available and widely portable GNU make
+program. If GNU make is not installed on your system by default, it can
+be obtained from::
 
-Version 8.0 of makeit has more or less been rewritten from scratch and is
-now being made available under a BSD style license_. You may install makeit
-into a standard location and use it from there, or copy the package into a
-subdirectory of your own project and use it from there instead.
+  http://www.gnu.org/software/make
+
+GNU make provides a range of extensions to standard make functionality far
+surpassing features available in commercial offerings. Makeit builds on
+this functionality to provide a library of predefined functionality which
+is included into your makefile and controlled through a limited number of
+variables. Your makefiles remain simple as all those rules you would
+otherwise have to write are out of sight. Further, all the variations
+implicit in supporting different compilers and host operating systems are
+also hidden, meaning not only will your makefile be simple, but it will be
+portable.
+
+With version 8.0 of makeit it was more or less rewritten from scratch and
+is now being made available under a BSD style license. You may install
+makeit into a standard location and use it from there, or copy the package
+into a subdirectory of your own project and use it from there instead.
 
 Please note that in the process of rewriting makeit and arriving at version
 8.0, it was restructured substantially in comparison to the version
@@ -28,24 +33,24 @@ been dropped for the sake of simplicitly and the naming conventions
 employed changed. Do not expect your existing makefiles to work without
 some changes being required.
 
+Documentation for makeit can be obtained from::
+
+  http://www.dscpl.com.au/wiki/Makeit
+
 Any questions you may have should be directed to the "Help" web forum on
-the OSE_ web site. Make it clear in your posts which version of this
-package you are using.
+the OSE project web site at::
 
-Official standalone releases of Makeit can be downloaded from:
+  http://sourceforge.net/projects/ose
 
-  http://www.dscpl.com.au/downloads.html
+Make it clear in your posts which version of this package you are using.
 
-The source code for the latest working copy of Makeit can be viewed at:
+The OSE project web site also hosts prepackaged releases of makeit.
 
-  http://svn.dscpl.com.au/makeit/trunk
+The source code for the latest working copy of makeit can be viewed at:
 
-If you have a subversion_ client, you can check out the latest working copy
-of Makeit using the command:
+  http://svn.dscpl.com.au/makeit
+
+If you have a subversion client, you can check out the latest working copy
+of makeit using the command:
 
   svn co http://svn.dscpl.com.au/makeit/trunk
-
-.. _GNU Make: http://www.gnu.org/software/make
-.. _OSE: http://ose.sourceforge.net
-.. _license: license.html
-.. _subversion: http://subversion.tigris.org
