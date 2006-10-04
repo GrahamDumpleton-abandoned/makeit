@@ -7,7 +7,7 @@ and C++ programming languages.
 
 Makeit relies on the freely available and widely portable GNU make
 program. If GNU make is not installed on your system by default, it can
-be obtained from::
+be obtained from:
 
   http://www.gnu.org/software/make
 
@@ -33,12 +33,12 @@ been dropped for the sake of simplicitly and the naming conventions
 employed changed. Do not expect your existing makefiles to work without
 some changes being required.
 
-Documentation for makeit can be obtained from::
+Documentation for makeit can be obtained from:
 
   http://www.dscpl.com.au/wiki/Makeit
 
 Any questions you may have should be directed to the "Help" web forum on
-the OSE project web site at::
+the OSE project web site at:
 
   http://sourceforge.net/projects/ose
 
