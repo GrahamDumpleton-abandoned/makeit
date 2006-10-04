@@ -5,9 +5,7 @@ Installation
 .. contents::
 
 This file contains a quick guide to what needs to be done to configure and
-install makeit. Note that all the instructions described here need to be
-done from within the "software" subdirectory and not the root directory of
-the package.
+install makeit.
 
 Package Prerequsites
 --------------------
