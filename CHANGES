@@ -1,0 +1,16 @@
+=======
+Changes
+=======
+
+Changes in Version 8.1
+----------------------
+
+* Documentation now being hosted on wiki at:
+
+    http://www.dscpl.com.au/wiki/Makeit
+
+  Because of this change, the package was restructured so as to promote the
+  actual software back up to the root of the package once again.
+
+  There were no actual changes to the build process or functionality in this
+  version.
