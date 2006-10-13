@@ -1,5 +1,5 @@
 ## Copyright 1992 OTC LIMITED
-## Copyright 1995-2003 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
+## Copyright 1995-2006 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
 
 vpath %.c $(SRCDIR) $(SRCDIRS)
 vpath %.c++ $(SRCDIR) $(SRCDIRS)
@@ -569,6 +569,15 @@ endif
 ifeq "$(origin INSTALL.AUXFLAGS6)" "undefined"
 INSTALL.AUXFLAGS6 := $(INSTALL.AUXFLAGS)
 endif
+ifeq "$(origin INSTALL.AUXFLAGS7)" "undefined"
+INSTALL.AUXFLAGS7 := $(INSTALL.AUXFLAGS)
+endif
+ifeq "$(origin INSTALL.AUXFLAGS8)" "undefined"
+INSTALL.AUXFLAGS8 := $(INSTALL.AUXFLAGS)
+endif
+ifeq "$(origin INSTALL.AUXFLAGS9)" "undefined"
+INSTALL.AUXFLAGS9 := $(INSTALL.AUXFLAGS)
+endif
 
 INSTALL.AUX1 := $(INSTALL) $(INSTALL.AUXFLAGS1)
 INSTALL.AUX2 := $(INSTALL) $(INSTALL.AUXFLAGS2)
@@ -576,6 +585,9 @@ INSTALL.AUX3 := $(INSTALL) $(INSTALL.AUXFLAGS3)
 INSTALL.AUX4 := $(INSTALL) $(INSTALL.AUXFLAGS4)
 INSTALL.AUX5 := $(INSTALL) $(INSTALL.AUXFLAGS5)
 INSTALL.AUX6 := $(INSTALL) $(INSTALL.AUXFLAGS6)
+INSTALL.AUX7 := $(INSTALL) $(INSTALL.AUXFLAGS7)
+INSTALL.AUX8 := $(INSTALL) $(INSTALL.AUXFLAGS8)
+INSTALL.AUX9 := $(INSTALL) $(INSTALL.AUXFLAGS9)
 
 ifeq "$(AUXDIR1)" ""
 override AUXDIR1 := $(AUXDIR)
@@ -590,6 +602,14 @@ ifneq "$(AUXILIARIES1)" ""
 
 _install_AUXDIR_AUXILIARIES1 := \
  $(patsubst %,$(AUXDIR1)/$(AUXPREFIX1)%$(AUXSUFFIX1),$(AUXILIARIES1))
+
+_install_AUXDIR_SUBDIRS1 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX1)%,$(AUXILIARIES1)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS1)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR1)/%,$(_install_AUXDIR_SUBDIRS1))
+endif
 
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES1)
 
@@ -609,6 +629,14 @@ ifneq "$(AUXILIARIES2)" ""
 _install_AUXDIR_AUXILIARIES2 := \
  $(patsubst %,$(AUXDIR2)/$(AUXPREFIX2)%$(AUXSUFFIX2),$(AUXILIARIES2))
 
+_install_AUXDIR_SUBDIRS2 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX2)%,$(AUXILIARIES2)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS2)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR2)/%,$(_install_AUXDIR_SUBDIRS2))
+endif
+
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES2)
 
 $(_install_AUXDIR_AUXILIARIES2) : $(AUXDIR2)/$(AUXPREFIX2)%$(AUXSUFFIX2) : %
@@ -626,6 +654,14 @@ ifneq "$(AUXILIARIES3)" ""
 
 _install_AUXDIR_AUXILIARIES3 := \
  $(patsubst %,$(AUXDIR3)/$(AUXPREFIX3)%$(AUXSUFFIX3),$(AUXILIARIES3))
+
+_install_AUXDIR_SUBDIRS3 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX3)%,$(AUXILIARIES3)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS3)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR3)/%,$(_install_AUXDIR_SUBDIRS3))
+endif
 
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES3)
 
@@ -645,6 +681,14 @@ ifneq "$(AUXILIARIES4)" ""
 _install_AUXDIR_AUXILIARIES4 := \
  $(patsubst %,$(AUXDIR4)/$(AUXPREFIX4)%$(AUXSUFFIX4),$(AUXILIARIES4))
 
+_install_AUXDIR_SUBDIRS4 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX4)%,$(AUXILIARIES4)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS4)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR4)/%,$(_install_AUXDIR_SUBDIRS4))
+endif
+
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES4)
 
 $(_install_AUXDIR_AUXILIARIES4) : $(AUXDIR4)/$(AUXPREFIX4)%$(AUXSUFFIX4) : %
@@ -662,6 +706,14 @@ ifneq "$(AUXILIARIES5)" ""
 
 _install_AUXDIR_AUXILIARIES5 := \
  $(patsubst %,$(AUXDIR5)/$(AUXPREFIX5)%$(AUXSUFFIX5),$(AUXILIARIES5))
+
+_install_AUXDIR_SUBDIRS5 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX5)%,$(AUXILIARIES5)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS5)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR5)/%,$(_install_AUXDIR_SUBDIRS5))
+endif
 
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES5)
 
@@ -681,9 +733,95 @@ ifneq "$(AUXILIARIES6)" ""
 _install_AUXDIR_AUXILIARIES6 := \
  $(patsubst %,$(AUXDIR6)/$(AUXPREFIX6)%$(AUXSUFFIX6),$(AUXILIARIES6))
 
+_install_AUXDIR_SUBDIRS6 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX6)%,$(AUXILIARIES6)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS6)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR6)/%,$(_install_AUXDIR_SUBDIRS6))
+endif
+
 install-aux.always :: $(_install_AUXDIR_AUXILIARIES6)
 
 $(_install_AUXDIR_AUXILIARIES6) : $(AUXDIR6)/$(AUXPREFIX6)%$(AUXSUFFIX6) : %
+	$(INSTALL.AUX6) $< $@
+
+endif
+
+endif
+
+ifneq "$(AUXDIR7)" ""
+
+_install_directories += $(AUXDIR7)
+
+ifneq "$(AUXILIARIES7)" ""
+
+_install_AUXDIR_AUXILIARIES7 := \
+ $(patsubst %,$(AUXDIR7)/$(AUXPREFIX7)%$(AUXSUFFIX7),$(AUXILIARIES7))
+
+_install_AUXDIR_SUBDIRS7 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX7)%,$(AUXILIARIES7)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS7)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR7)/%,$(_install_AUXDIR_SUBDIRS7))
+endif
+
+install-aux.always :: $(_install_AUXDIR_AUXILIARIES7)
+
+$(_install_AUXDIR_AUXILIARIES7) : $(AUXDIR7)/$(AUXPREFIX7)%$(AUXSUFFIX7) : %
+	$(INSTALL.AUX7) $< $@
+
+endif
+
+endif
+
+ifneq "$(AUXDIR8)" ""
+
+_install_directories += $(AUXDIR8)
+
+ifneq "$(AUXILIARIES8)" ""
+
+_install_AUXDIR_AUXILIARIES8 := \
+ $(patsubst %,$(AUXDIR8)/$(AUXPREFIX8)%$(AUXSUFFIX8),$(AUXILIARIES8))
+
+_install_AUXDIR_SUBDIRS8 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX8)%,$(AUXILIARIES8)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS8)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR8)/%,$(_install_AUXDIR_SUBDIRS8))
+endif
+
+install-aux.always :: $(_install_AUXDIR_AUXILIARIES8)
+
+$(_install_AUXDIR_AUXILIARIES8) : $(AUXDIR8)/$(AUXPREFIX8)%$(AUXSUFFIX8) : %
+	$(INSTALL.AUX8) $< $@
+
+endif
+
+endif
+
+ifneq "$(AUXDIR9)" ""
+
+_install_directories += $(AUXDIR9)
+
+ifneq "$(AUXILIARIES9)" ""
+
+_install_AUXDIR_AUXILIARIES9 := \
+ $(patsubst %,$(AUXDIR9)/$(AUXPREFIX9)%$(AUXSUFFIX9),$(AUXILIARIES9))
+
+_install_AUXDIR_SUBDIRS9 := $(patsubst %/,%,$(filter-out ./, \
+ $(dir $(patsubst %,$(AUXPREFIX9)%,$(AUXILIARIES9)))))
+
+ifneq "$(_install_AUXDIR_SUBDIRS9)" ""
+_install_directories += \
+ $(patsubst %,$(AUXDIR9)/%,$(_install_AUXDIR_SUBDIRS9))
+endif
+
+install-aux.always :: $(_install_AUXDIR_AUXILIARIES9)
+
+$(_install_AUXDIR_AUXILIARIES9) : $(AUXDIR9)/$(AUXPREFIX9)%$(AUXSUFFIX9) : %
 	$(INSTALL.AUX6) $< $@
 
 endif

@@ -12,5 +12,14 @@ Changes in Version 8.1
   Because of this change, the package was restructured so as to promote the
   actual software back up to the root of the package once again.
 
-  There were no actual changes to the build process or functionality in this
-  version.
+* The 'install' target now allows up to 9 directories for installation of
+  auxiliary files. Ie., AUXDIR1, up to AUXDIR9.
+
+* The AUXILIARIES variable can now reference files in subdirectories and
+  the subdirectories will automatically be created. Thus:
+
+    AUXDIR1 = /usr/local/include
+    AUXILIARIES1 += */*.h
+
+  Previously it was necessary to determine what the complete path to the
+  subdirectories were and add them explicitly to the INSTALLDIRS variable.
