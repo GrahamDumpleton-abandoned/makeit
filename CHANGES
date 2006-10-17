@@ -23,3 +23,6 @@ Changes in Version 8.1
 
   Previously it was necessary to determine what the complete path to the
   subdirectories were and add them explicitly to the INSTALLDIRS variable.
+
+* Try and determine where 'tsort' is installed as on platforms such as
+  Solaris, people often do not have '/usr/ccs/bin' in their PATH.

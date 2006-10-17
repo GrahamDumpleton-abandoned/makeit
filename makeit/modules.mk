@@ -1,9 +1,17 @@
-## Copyright 1995-2003 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
+## Copyright 1995-2006 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
 
 # Include modules.
 
+ifeq "$(TSORT)" ""
+override TSORT := \
+ $(firstword $(wildcard /bin/tsort /usr/bin/tsort /usr/ccs/bin/tsort))
+ifeq "$(TSORT)" ""
+override TSORT := tsort
+endif
+endif
+
 _makeit_module_list := \
- $(shell cat $(wildcard $(MAKEIT_MODULE_DEPENDENCIES)) | tsort)
+ $(shell cat $(wildcard $(MAKEIT_MODULE_DEPENDENCIES)) | $(TSORT))
 
 MAKEIT_MODULES += $(_makeit_module_list)
 
