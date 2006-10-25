@@ -1,5 +1,5 @@
 ## Copyright 1992-1993 OTC LIMITED
-## Copyright 1995-2004 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
+## Copyright 1995-2006 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
 
 (%) : %
 
@@ -283,6 +283,10 @@ endif
 endif
 
 endif
+
+endif
+
+ifneq "$(filter shared_library loadable_module,$(PIC_OPTIONS))" ""
 
 ## When objects aren't pic by default there
 ## will be a separate build subdirectory for

@@ -15,14 +15,9 @@ Changes in Version 8.1
 * The 'install' target now allows up to 9 directories for installation of
   auxiliary files. Ie., AUXDIR1, up to AUXDIR9.
 
-* The AUXILIARIES variable can now reference files in subdirectories and
-  the subdirectories will automatically be created. Thus:
-
-    AUXDIR1 = /usr/local/include
-    AUXILIARIES1 += */*.h
-
-  Previously it was necessary to determine what the complete path to the
-  subdirectories were and add them explicitly to the INSTALLDIRS variable.
-
 * Try and determine where 'tsort' is installed as on platforms such as
   Solaris, people often do not have '/usr/ccs/bin' in their PATH.
+
+* When specifying 'loadable_module' in PIC_OPTIONS and not also building a
+  shared library, the 'pic' build directory wasn't being created on platform
+  where normal object files aren't the same as position independent objects.
