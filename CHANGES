@@ -2,6 +2,22 @@
 Changes
 =======
 
+Changes in Version 8.1pl1
+-------------------------
+
+* Extraneous '%' character was being added to internal lists of files to be
+  produced from generated C code and incorporated into the library. This
+  was causing failure of the make rules. The problem manifested when using
+  lex or yacc modules and option to incorporate generated code into the
+  library was being used.
+
+* Have yacc module add YACC_LDFLAGS to LDFLAGS if set. This can be need if
+  bison is being used and its library isn't in a standard location.
+
+* Have lex module add LEX_LDFLAGS to LDFLAGS if set. This can be need if
+  flex is being used and its library isn't in a standard location.
+
+
 Changes in Version 8.1
 ----------------------
 

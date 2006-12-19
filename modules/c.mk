@@ -279,7 +279,7 @@ _c_make_LIB_OBJECTS := \
  $(patsubst %.c,%$(OBJEXT),$(_c_make_LIB_SRC))
 
 _c_make_MK_LIB_OBJECTS := \
- $(addprefix $(MK)/%,$(_c_make_LIB_OBJECTS))
+ $(addprefix $(MK)/,$(_c_make_LIB_OBJECTS))
 
 $(_c_make_MK_LIB_OBJECTS) : $(MK)/%$(OBJEXT) : $(MK)/%.c
 	$(RUN-COMPILE-LIB.c)

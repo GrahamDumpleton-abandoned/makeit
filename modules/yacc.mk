@@ -167,3 +167,7 @@ YACCLIB := -ly
 endif
 
 override LDLIBS += $(YACCLIB)
+
+ifneq "$(YACC_LDFLAGS)" ""
+override LDFLAGS += $(YACC_LDFLAGS)
+endif

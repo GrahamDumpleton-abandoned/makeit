@@ -174,3 +174,7 @@ endif
 ## Add lex library.
 
 override LDLIBS += $(LEXLIB)
+
+ifneq "$(LEX_LDFLAGS)" ""
+override LDFLAGS += $(LEX_LDFLAGS)
+endif
