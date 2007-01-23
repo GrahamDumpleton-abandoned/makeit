@@ -56,16 +56,6 @@ else
 _makeit_MK_PIC_OBJECTS := $(_makeit_MK_LIB_OBJECTS)
 endif
 
-ifneq "$(_makeit_MK_PIC_OBJECTS)" ""
-
-## Last hurdle is whether a shared library
-## or loadable module can be built for the
-## current variant.
-
-ifneq "$(filter $(VARIANT),$(COMPILER_PIC_VARIANTS))" ""
-
-all.always :: pic
-
 ## If no shared library or loadable module
 ## name is provided, we need to provide a
 ## dummy instead.
@@ -105,6 +95,16 @@ PIC_LDLIBS.pic = $(PIC_LDLIBS) $(PROJECT_PIC_LDLIBS) \
 
 LDFLAGS.pic = $(filter -L%,$(ALL_LDFLAGS.pic))
 LDLIBS.pic = $(filter -l%,$(ALL_LDLIBS.pic))
+
+ifneq "$(_makeit_MK_PIC_OBJECTS)" ""
+
+## Last hurdle is whether a shared library
+## or loadable module can be built for the
+## current variant.
+
+ifneq "$(filter $(VARIANT),$(COMPILER_PIC_VARIANTS))" ""
+
+all.always :: pic
 
 ## Expanded library operations common to both
 ## shared libraries and loadable modules.

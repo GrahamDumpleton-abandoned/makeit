@@ -1,5 +1,5 @@
 ## Copyright 1992-1993 OTC LIMITED
-## Copyright 1995-2003 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
+## Copyright 1995-2007 DUMPLETON SOFTWARE CONSULTING PTY LIMITED
 
 vpath %.y $(SRCDIR) $(SRCDIRS)
 
@@ -106,59 +106,72 @@ $(patsubst %,$(MK)/%$(OBJEXT),$(_yacc_generated_SRC_STEMS)) \
 depend.setup :: $(patsubst %,$(MK)/%.h,$(_yacc_generated_SRC_STEMS))
 endif
 
-YACCFIX.c = \
- sed -e 's/^\# *line \(.*\)"y.tab.c"\(.*\)$$/\#line \1"$(subst /,\/,$(MK)/$(<F:.y=.c))"\2/'
+YACCFIX.h = \
+ sed -e 's/^\# *line \(.*\)"y.tab.h"\(.*\)$$/\#line \1"$(subst /,\/,$(MK)/$(<F:.y=.h))"\2/'
+
+ifeq "$(_yacc_cc)" "YES"
 
 YACCFIX.cc = \
  sed -e 's/^\# *line \(.*\)"y.tab.c"\(.*\)$$/\#line \1"$(subst /,\/,$(MK)/$(<F:.y=.cc))"\2/'
 
 %.cc : %.y
 
-%.c : %.y
-
 $(MK)/%.cc $(MK)/%.h : %.y
 	$(YACC) -d $(YFLAGS) $<
 ifneq "$(YACCFILTER)" ""
+	cat y.tab.h | $(YACCFIX.h) | $(YACCFILTER) > $(MK)/$(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.cc) | $(YACCFILTER) > $(MK)/$(<F:.y=.cc)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 else
+	cat y.tab.h | $(YACCFIX.h) > $(MK)/$(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.cc) > $(MK)/$(<F:.y=.cc)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 endif
-	mv y.tab.h $(MK)/$(<F:.y=.h)
 
 $(MK)/%.cc $(MK)/%.h : $(MK)/%.y
 	$(YACC) -d $(YFLAGS) $<
 ifneq "$(YACCFILTER)" ""
+	cat y.tab.h | $(YACCFIX.h) | $(YACCFILTER) > $(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.cc) | $(YACCFILTER) > $(<F:.y=.cc)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 else
+	cat y.tab.h | $(YACCFIX.h) > $(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.cc) > $(<F:.y=.cc)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 endif
-	mv y.tab.h $(<F:.y=.h)
+
+else
+
+YACCFIX.c = \
+ sed -e 's/^\# *line \(.*\)"y.tab.c"\(.*\)$$/\#line \1"$(subst /,\/,$(MK)/$(<F:.y=.c))"\2/'
+
+%.c : %.y
 
 $(MK)/%.c $(MK)/%.h : %.y
 	$(YACC) -d $(YFLAGS) $<
 ifneq "$(YACCFILTER)" ""
+	cat y.tab.h | $(YACCFIX.h) | $(YACCFILTER) > $(MK)/$(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.c) | $(YACCFILTER) > $(MK)/$(<F:.y=.c)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 else
+	cat y.tab.h | $(YACCFIX.h) > $(MK)/$(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.c) > $(MK)/$(<F:.y=.c)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 endif
-	mv y.tab.h $(MK)/$(<F:.y=.h)
 
 $(MK)/%.c $(MK)/%.h : $(MK)/%.y
 	$(YACC) -d $(YFLAGS) $<
 ifneq "$(YACCFILTER)" ""
+	cat y.tab.h | $(YACCFIX.h) | $(YACCFILTER) > $(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.c) | $(YACCFILTER) > $(<F:.y=.c)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 else
+	cat y.tab.h | $(YACCFIX.h) > $(<F:.y=.h)
 	cat y.tab.c | $(YACCFIX.c) > $(<F:.y=.c)
-	$(RM) y.tab.c
+	$(RM) y.tab.h y.tab.c
 endif
-	mv y.tab.h $(<F:.y=.h)
+
+endif
 
 ## Add yacc library.
 
